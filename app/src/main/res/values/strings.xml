@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">VibePlayer</string>
+    <string name="permission_description">VibePlayer needs access to your music files to build your library and play songs</string>
+    <string name="permission_request_button">Allow Access</string>
+
+    <string name="home_empty_state_title">No music found</string>
+    <string name="home_empty_state_description">Try scanning again or check your folders</string>
+    <string name="home_empty_state_button">Scan again</string>
+    <string name="home_scanning_state_description">Scanning your device for music...</string>
+
+    <string name="scanner_screen_title">Scan Music</string>
+
+    <string name="scan_action">Scan</string>
+    <string name="back_action">Go back to previous screen</string>
+    <string name="scanner_track_duration_selector">Ignore duration less than</string>
+    <string name="scanner_track_size_selector">Ignore size less than</string>
+    <string name="scanner_default_state_button">Scan</string>
+    <string name="scanner_loading_state_button">Scanning</string>
+
+</resources>

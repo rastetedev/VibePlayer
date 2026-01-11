@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.VibePlayer" parent="android:Theme.Material.NoActionBar.Fullscreen" />
+
+    <style name="Theme.SplashScreen.VibePlayer" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_splash_logo</item>
+        <item name="windowSplashScreenBackground">#FF0A131D</item>
+        <item name="postSplashScreenTheme">@style/Theme.VibePlayer</item>
+    </style>
+</resources>
