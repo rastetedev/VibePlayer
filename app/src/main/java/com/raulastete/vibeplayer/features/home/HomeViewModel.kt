@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raulastete.vibeplayer.features.home.components.TrackItemUi
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,6 +31,7 @@ import kotlinx.coroutines.withContext
         }
 
         viewModelScope.launch(Dispatchers.IO) {
+            delay(4_000)
             val trackList = mutableListOf<TrackItemUi>()
 
             val projection = arrayOf(

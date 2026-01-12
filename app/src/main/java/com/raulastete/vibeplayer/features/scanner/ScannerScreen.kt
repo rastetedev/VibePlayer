@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
@@ -69,7 +70,7 @@ private fun ScannerScreenContent(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            ScanningAnimation()
+            ScanningAnimation(Modifier.size(124.dp))
             Spacer(Modifier.height(24.dp))
             OptionSelector(
                 title = stringResource(R.string.scanner_track_duration_selector),

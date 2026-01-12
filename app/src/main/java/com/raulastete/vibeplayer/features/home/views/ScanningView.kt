@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +26,7 @@ import com.raulastete.vibeplayer.ui.theme.bodyMediumRegular
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        ScanningAnimation()
+        ScanningAnimation(Modifier.size(124.dp))
         Spacer(Modifier.height(20.dp))
         Text(
             text = stringResource(R.string.home_scanning_state_description),
