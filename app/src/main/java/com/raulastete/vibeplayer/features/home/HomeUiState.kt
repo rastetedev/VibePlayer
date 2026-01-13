@@ -1,6 +1,6 @@
 package com.raulastete.vibeplayer.features.home
 
-import com.raulastete.vibeplayer.features.home.components.TrackItemUi
+import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
 
  data class HomeUiState(
     val state: ContentState = ContentState.Empty
@@ -9,5 +9,5 @@ import com.raulastete.vibeplayer.features.home.components.TrackItemUi
  sealed interface ContentState {
     data object Empty : ContentState
     data object Scanning : ContentState
-    data class TrackList(val trackItems: List<TrackItemUi>) : ContentState
+    data class TrackList(val musicTrackItems: List<MusicTrackItemUi>) : ContentState
 }

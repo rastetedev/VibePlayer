@@ -31,6 +31,7 @@ import com.raulastete.vibeplayer.ui.components.InternalTopBar
 import com.raulastete.vibeplayer.ui.components.PrimaryButton
 import com.raulastete.vibeplayer.ui.components.ScanningAnimation
 import com.raulastete.vibeplayer.ui.theme.ButtonPrimary
+import com.raulastete.vibeplayer.ui.theme.ButtonPrimary30
 import com.raulastete.vibeplayer.ui.theme.TextDisabled
 import com.raulastete.vibeplayer.ui.theme.TextSecondary
 import com.raulastete.vibeplayer.ui.theme.bodyLargeMedium
@@ -148,7 +149,8 @@ fun OptionSelectorItem(
                 shape = RoundedCornerShape(100.dp)
             )
             .border(
-                width = 1.dp, color = ButtonPrimary,
+                width = 1.dp,
+                color = ButtonPrimary30,
                 shape = RoundedCornerShape(100.dp)
             ),
         verticalAlignment = Alignment.CenterVertically

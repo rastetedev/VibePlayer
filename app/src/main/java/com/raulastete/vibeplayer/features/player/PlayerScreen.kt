@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.raulastete.vibeplayer.features.home.components.TrackItemUi
+import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
 import com.raulastete.vibeplayer.features.player.components.PlayerControl
 import com.raulastete.vibeplayer.ui.components.ArtWorkImage
 import com.raulastete.vibeplayer.ui.components.InternalTopBar
@@ -64,7 +64,7 @@ private fun PlayerScreenContent(
             uiState.currentTrack?.let { trackItemUi ->
                 Spacer(Modifier.weight(1f))
                 TrackInfo(
-                    trackItemUi = trackItemUi
+                    musicTrackItemUi = trackItemUi
                 )
                 Spacer(Modifier.weight(1f))
 
@@ -87,22 +87,22 @@ private fun PlayerScreenContent(
 
 @Composable
 private fun TrackInfo(
-    trackItemUi: TrackItemUi
+    musicTrackItemUi: MusicTrackItemUi
 ) {
     ArtWorkImage(
-        artwork = trackItemUi.artwork,
+        artwork = musicTrackItemUi.artwork,
         modifier = Modifier.size(320.dp),
         placeholderSize = 180.dp
     )
     Spacer(Modifier.height(20.dp))
     Text(
-        text = trackItemUi.title,
+        text = musicTrackItemUi.title,
         textAlign = TextAlign.Center,
         style = MaterialTheme.typography.titleLarge
     )
     Spacer(Modifier.height(4.dp))
     Text(
-        text = trackItemUi.artistName,
+        text = musicTrackItemUi.artistName,
         textAlign = TextAlign.Center,
         style = MaterialTheme.typography.bodyMediumRegular.copy(
             color = TextSecondary

@@ -9,7 +9,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.raulastete.vibeplayer.features.home.HomeScreen
-import com.raulastete.vibeplayer.features.home.components.TrackItemUi
 import com.raulastete.vibeplayer.features.permission.PermissionScreen
 import com.raulastete.vibeplayer.features.player.PlayerScreen
 import com.raulastete.vibeplayer.features.scanner.ScannerScreen

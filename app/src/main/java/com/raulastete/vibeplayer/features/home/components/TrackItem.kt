@@ -14,7 +14,7 @@ import com.raulastete.vibeplayer.ui.components.ArtWorkImage
 import com.raulastete.vibeplayer.ui.theme.TextSecondary
 import com.raulastete.vibeplayer.ui.theme.bodyMediumRegular
 
-data class TrackItemUi(
+data class MusicTrackItemUi(
     val id: String,
     val artwork: Uri,
     val title: String,
@@ -24,7 +24,7 @@ data class TrackItemUi(
 
 @Composable
 fun TrackItem(
-    trackItemUi: TrackItemUi,
+    musicTrackItemUi: MusicTrackItemUi,
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
@@ -32,7 +32,7 @@ fun TrackItem(
         modifier = modifier.clickable { onClick() },
         headlineContent = {
             Text(
-                text = trackItemUi.title,
+                text = musicTrackItemUi.title,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.titleMedium
@@ -40,7 +40,7 @@ fun TrackItem(
         },
         supportingContent = {
             Text(
-                text = trackItemUi.artistName,
+                text = musicTrackItemUi.artistName,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.bodyMediumRegular.copy(color = TextSecondary)
@@ -49,13 +49,13 @@ fun TrackItem(
         leadingContent = {
             ArtWorkImage(
                 modifier = Modifier.size(64.dp),
-                artwork = trackItemUi.artwork,
+                artwork = musicTrackItemUi.artwork,
                 placeholderSize = 36.dp
             )
         },
         trailingContent = {
             Text(
-                text = trackItemUi.musicLengthFormatted,
+                text = musicTrackItemUi.musicLengthFormatted,
                 style = MaterialTheme.typography.bodyMediumRegular.copy(color = TextSecondary)
             )
         }

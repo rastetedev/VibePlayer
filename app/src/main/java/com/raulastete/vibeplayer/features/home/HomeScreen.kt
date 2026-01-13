@@ -8,30 +8,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.raulastete.vibeplayer.features.home.views.EmptyView
 import com.raulastete.vibeplayer.features.home.views.ScanningView
 import com.raulastete.vibeplayer.features.home.views.TrackListView
 import com.raulastete.vibeplayer.ui.components.MainTopBar
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun HomeScreen(
-    viewModel: HomeViewModel = viewModel(),
+    viewModel: HomeViewModel = koinViewModel(),
     onScanActionClick: () -> Unit,
     onTrackItemClick: (trackItemId: String) -> Unit,
 ) {
-    val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     HomeScreenContent(
         uiState = uiState,
         onScanActionClick = onScanActionClick,
-        onLoadTracks = {
-            viewModel.getLocalAudioFiles(context)
-        },
+        onLoadTracks = viewModel::loadMusicTracks,
         onTrackItemClick = onTrackItemClick
     )
 }
@@ -68,7 +64,7 @@ private fun HomeScreenContent(
                 )
 
                 is ContentState.TrackList -> TrackListView(
-                    trackItems = uiState.state.trackItems,
+                    trackItems = uiState.state.musicTrackItems,
                     onClickTrackItem = { trackItem ->
                         onTrackItemClick(trackItem.id)
                     },

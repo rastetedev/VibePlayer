@@ -11,24 +11,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.raulastete.vibeplayer.features.home.components.TrackItem
-import com.raulastete.vibeplayer.features.home.components.TrackItemUi
+import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
 import com.raulastete.vibeplayer.ui.theme.Outline
 
 @Composable
  fun TrackListView(
-    trackItems: List<TrackItemUi>,
-    onClickTrackItem: (TrackItemUi) -> Unit,
+    trackItems: List<MusicTrackItemUi>,
+    onClickTrackItem: (MusicTrackItemUi) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier) {
         itemsIndexed(
             trackItems,
-            key = { index, trackItem -> trackItem.title }
+            key = { _, trackItem -> trackItem.title }
         ) { index, trackItemUi ->
 
             TrackItem(
                 modifier = Modifier.padding(vertical = 12.dp),
-                trackItemUi = trackItemUi,
+                musicTrackItemUi = trackItemUi,
                 onClick = { onClickTrackItem(trackItemUi) }
             )
 
@@ -43,7 +43,7 @@ import com.raulastete.vibeplayer.ui.theme.Outline
 @Preview
 private fun TrackItemPreview() {
     TrackItem(
-        trackItemUi = TrackItemUi(
+        musicTrackItemUi = MusicTrackItemUi(
             id = "ID",
             artwork = Uri.EMPTY,
             title = "505",

@@ -3,7 +3,7 @@ package com.raulastete.vibeplayer.features.player
 import android.net.Uri
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.raulastete.vibeplayer.features.home.components.TrackItemUi
+import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -22,7 +22,7 @@ class PlayerViewModel(
     init {
         _uiState.update {
             it.copy(
-                currentTrack = TrackItemUi(
+                currentTrack = MusicTrackItemUi(
                     id = trackItemId,
                     artwork = Uri.EMPTY,
                     title = "Titulo de prueba $trackItemId",
