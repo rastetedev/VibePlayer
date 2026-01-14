@@ -14,6 +14,7 @@ activityCompose = "1.8.0"
 composeBom = "2024.09.00"
 navigationCompose = "2.9.6"
 roomRuntime = "2.8.4"
+datastore = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,6 +42,7 @@ koin-androidx-compose-navigation = { module = "io.insert-koin:koin-androidx-comp
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences" , version.ref = "datastore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
