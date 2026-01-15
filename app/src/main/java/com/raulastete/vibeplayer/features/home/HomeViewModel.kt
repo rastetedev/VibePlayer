@@ -1,6 +1,5 @@
 package com.raulastete.vibeplayer.features.home
 
-import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raulastete.vibeplayer.core.AppDispatchers
@@ -69,6 +68,9 @@ class HomeViewModel(
             musicTrackRepository.syncMusicTracks()
         }
     }
+
+    fun shuffleTrackList(){}
+    fun playTrackList(){}
 
     fun formatDuration(duration: Long): String {
         val minutes = (duration / 1000) / 60

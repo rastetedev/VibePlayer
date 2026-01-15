@@ -20,6 +20,7 @@ import org.koin.androidx.compose.koinViewModel
 fun HomeScreen(
     viewModel: HomeViewModel = koinViewModel(),
     onScanActionClick: () -> Unit,
+    onSearchActionClick: () -> Unit,
     onTrackItemClick: (trackItemId: String) -> Unit,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -27,7 +28,10 @@ fun HomeScreen(
     HomeScreenContent(
         uiState = uiState,
         onScanActionClick = onScanActionClick,
+        onSearchActionClick = onSearchActionClick,
         onLoadTracks = viewModel::loadMusicTracks,
+        onShuffleTrackListActionClick = viewModel::shuffleTrackList,
+        onPlayTrackListClick = viewModel::playTrackList,
         onTrackItemClick = onTrackItemClick
     )
 }
@@ -36,13 +40,18 @@ fun HomeScreen(
 private fun HomeScreenContent(
     uiState: HomeUiState,
     onScanActionClick: () -> Unit,
+    onSearchActionClick: () -> Unit,
+    onShuffleTrackListActionClick: () -> Unit,
+    onPlayTrackListClick: () -> Unit,
     onLoadTracks: () -> Unit,
     onTrackItemClick: (trackItemId: String) -> Unit
 ) {
     Scaffold(
         topBar = {
             MainTopBar(
-                onScanActionClick = onScanActionClick
+                showSearchButton = uiState.state is ContentState.TrackList,
+                onScanActionClick = onScanActionClick,
+                onSearchActionClick = onSearchActionClick
             )
         }
     ) {
@@ -68,6 +77,8 @@ private fun HomeScreenContent(
                     onClickTrackItem = { trackItem ->
                         onTrackItemClick(trackItem.id)
                     },
+                    onShuffleTrackListActionClick = onShuffleTrackListActionClick,
+                    onPlayTrackListClick = onPlayTrackListClick,
                     modifier = Modifier.fillMaxSize()
                 )
             }

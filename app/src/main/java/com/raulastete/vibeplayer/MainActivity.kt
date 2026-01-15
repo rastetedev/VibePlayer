@@ -12,6 +12,7 @@ import com.raulastete.vibeplayer.features.home.HomeScreen
 import com.raulastete.vibeplayer.features.permission.PermissionScreen
 import com.raulastete.vibeplayer.features.player.PlayerScreen
 import com.raulastete.vibeplayer.features.scanner.ScannerScreen
+import com.raulastete.vibeplayer.features.search.SearchScreen
 import com.raulastete.vibeplayer.ui.theme.VibePlayerTheme
 import kotlinx.serialization.Serializable
 
@@ -39,6 +40,9 @@ class MainActivity : ComponentActivity() {
                             onScanActionClick = {
                                 navController.navigate(Destination.Scanner)
                             },
+                            onSearchActionClick = {
+                                navController.navigate(Destination.Search)
+                            },
                             onTrackItemClick = { trackItemId ->
                                 navController.navigate(Destination.Player(trackItemId))
                             }
@@ -51,6 +55,10 @@ class MainActivity : ComponentActivity() {
                                 navController.navigateUp()
                             }
                         )
+                    }
+
+                    composable<Destination.Search> {
+                        SearchScreen()
                     }
 
                     composable<Destination.Player> {
@@ -76,6 +84,9 @@ sealed interface Destination {
 
     @Serializable
     object Scanner : Destination
+
+    @Serializable
+    object Search : Destination
 
     @Serializable
     data class Player(val trackItemId: String) : Destination

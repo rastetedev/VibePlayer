@@ -1,15 +1,13 @@
 package com.raulastete.vibeplayer.features.player.components
 
-import android.util.Log.i
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,18 +35,18 @@ fun PlayerControl(
         horizontalArrangement = Arrangement.Center
     ) {
         SecondaryButton(
-            icon = ImageVector.vectorResource(R.drawable.previous_track_icon),
+            icon = ImageVector.vectorResource(R.drawable.previous_skip_filled_icon),
             onClick = onPreviousButtonClick
         )
         Spacer(Modifier.width(16.dp))
         MainButton(
-            icon = if (isPlaying) ImageVector.vectorResource(R.drawable.pause_track_icon)
-            else ImageVector.vectorResource(R.drawable.play_track_icon),
+            icon = if (isPlaying) ImageVector.vectorResource(R.drawable.pause_filled_icon)
+            else ImageVector.vectorResource(R.drawable.play_filled_icon),
             onClick = if (isPlaying) onPauseButtonClick else onPlayButtonClick
         )
         Spacer(Modifier.width(16.dp))
         SecondaryButton(
-            icon = ImageVector.vectorResource(R.drawable.next_track_icon),
+            icon = ImageVector.vectorResource(R.drawable.next_skip_filled_icon),
             onClick = onNextButtonClick
         )
     }
@@ -61,15 +59,16 @@ private fun SecondaryButton(
 ) {
     IconButton(
         onClick = onClick,
-        modifier = Modifier
-            .size(24.dp)
-            .background(color = ButtonHover, shape = CircleShape)
+        modifier = Modifier.size(44.dp),
+        colors = IconButtonDefaults.filledIconButtonColors(
+            containerColor = ButtonHover,
+            contentColor = TextSecondary
+        )
     ) {
         Icon(
+            modifier = Modifier.size(16.dp),
             imageVector = icon,
-            contentDescription = null,
-            tint = TextSecondary,
-            modifier = Modifier.size(16.dp)
+            contentDescription = null
         )
     }
 }
@@ -81,15 +80,16 @@ private fun MainButton(
 ) {
     IconButton(
         onClick = onClick,
-        modifier = Modifier
-            .size(60.dp)
-            .background(color = TextPrimary, shape = CircleShape)
+        modifier = Modifier.size(60.dp),
+        colors = IconButtonDefaults.filledIconButtonColors(
+            containerColor = TextPrimary,
+            contentColor = SurfaceBG
+        )
     ) {
         Icon(
+            modifier = Modifier.size(24.dp),
             imageVector = icon,
-            contentDescription = null,
-            tint = SurfaceBG,
-            modifier = Modifier.size(24.dp)
+            contentDescription = null
         )
     }
 }

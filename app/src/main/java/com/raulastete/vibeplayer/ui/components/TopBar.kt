@@ -2,6 +2,7 @@
 
 package com.raulastete.vibeplayer.ui.components
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -32,7 +33,9 @@ import com.raulastete.vibeplayer.ui.theme.bodyLargeMedium
 
 @Composable
 fun MainTopBar(
-    onScanActionClick: () -> Unit
+    showSearchButton: Boolean,
+    onScanActionClick: () -> Unit,
+    onSearchActionClick: () -> Unit
 ) {
     TopAppBar(
         title = {
@@ -57,9 +60,22 @@ fun MainTopBar(
             ) {
                 Icon(
                     modifier = Modifier.size(16.dp),
-                    imageVector = ImageVector.vectorResource(R.drawable.scan_action_icon),
+                    imageVector = ImageVector.vectorResource(R.drawable.scan_icon),
                     contentDescription = stringResource(R.string.scan_action)
                 )
+            }
+            AnimatedVisibility(showSearchButton) {
+                Spacer(Modifier.width(8.dp))
+                IconButton(
+                    onClick = onSearchActionClick,
+                    modifier = Modifier.background(ButtonHover, shape = CircleShape)
+                ) {
+                    Icon(
+                        modifier = Modifier.size(16.dp),
+                        imageVector = ImageVector.vectorResource(R.drawable.search_icon),
+                        contentDescription = stringResource(R.string.search_action)
+                    )
+                }
             }
         }
     )

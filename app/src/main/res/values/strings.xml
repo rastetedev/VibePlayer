@@ -11,6 +11,7 @@
     <string name="scanner_screen_title">Scan Music</string>
 
     <string name="scan_action">Scan</string>
+    <string name="search_action">Search</string>
     <string name="back_action">Go back to previous screen</string>
     <string name="scanner_track_duration_selector">Ignore duration less than</string>
     <string name="scanner_track_size_selector">Ignore size less than</string>
@@ -19,5 +20,11 @@
     <string name="try_again_request_permission_button">Try again</string>
     <string name="dismiss_button">Dismiss\n</string>
     <string name="permission_rationale_description_dialog">VibePlayer needs access to your music files to function properly. Without this permission, the app cannot build your music library or play\nsongs.</string>
+    <string name="shuffle_track_list_button">Shuffle</string>
+    <string name="play_track_list_button">Play</string>
+    <plurals name="track_count">
+        <item quantity="one"> %d song</item>
+        <item quantity="other"> %d songs</item>
+    </plurals>
 
 </resources>

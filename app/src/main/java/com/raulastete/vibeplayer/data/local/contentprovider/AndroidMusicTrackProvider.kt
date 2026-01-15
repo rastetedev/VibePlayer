@@ -2,10 +2,10 @@ package com.raulastete.vibeplayer.data.local.contentprovider
 
 import android.content.ContentUris
 import android.content.Context
-import android.net.Uri
 import android.provider.MediaStore
 import com.raulastete.vibeplayer.data.local.MusicTrackProvider
 import com.raulastete.vibeplayer.domain.MusicTrack
+import androidx.core.net.toUri
 
 class AndroidMusicTrackProvider(
     private val context: Context
@@ -45,7 +45,7 @@ class AndroidMusicTrackProvider(
                 val duration = c.getLong(durationColumn)
 
                 val albumArtUri = ContentUris.withAppendedId(
-                    Uri.parse("content://media/external/audio/albumart"),
+                    "content://media/external/audio/albumart".toUri(),
                     albumId
                 )
 
