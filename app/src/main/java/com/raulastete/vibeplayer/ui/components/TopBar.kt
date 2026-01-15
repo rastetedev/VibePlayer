@@ -65,16 +65,18 @@ fun MainTopBar(
                 )
             }
             AnimatedVisibility(showSearchButton) {
-                Spacer(Modifier.width(8.dp))
-                IconButton(
-                    onClick = onSearchActionClick,
-                    modifier = Modifier.background(ButtonHover, shape = CircleShape)
-                ) {
-                    Icon(
-                        modifier = Modifier.size(16.dp),
-                        imageVector = ImageVector.vectorResource(R.drawable.search_icon),
-                        contentDescription = stringResource(R.string.search_action)
-                    )
+                Row {
+                    Spacer(Modifier.width(8.dp))
+                    IconButton(
+                        onClick = onSearchActionClick,
+                        modifier = Modifier.background(ButtonHover, shape = CircleShape)
+                    ) {
+                        Icon(
+                            modifier = Modifier.size(16.dp),
+                            imageVector = ImageVector.vectorResource(R.drawable.search_icon),
+                            contentDescription = stringResource(R.string.search_action)
+                        )
+                    }
                 }
             }
         }

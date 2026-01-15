@@ -1,5 +1,6 @@
 package com.raulastete.vibeplayer.features.home
 
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raulastete.vibeplayer.core.AppDispatchers
@@ -14,14 +15,14 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import androidx.core.net.toUri
 
 class HomeViewModel(
     private val musicTrackRepository: MusicTrackRepository,
     private val appDispatchers: AppDispatchers
 ) : ViewModel() {
 
-    private var _uiState: MutableStateFlow<HomeUiState> = MutableStateFlow(HomeUiState())
+    private var _uiState: MutableStateFlow<HomeUiState> =
+        MutableStateFlow(HomeUiState(ContentState.Scanning))
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
     init {
@@ -40,23 +41,25 @@ class HomeViewModel(
                         musicLengthFormatted = formatDuration(it.playTimeMillis)
                     )
                 }
-            }.collectLatest { uiItems ->
-                withContext(appDispatchers.mainDispatcher){
-                    if(uiItems.isNotEmpty()){
-                        delay(3000)
-                        _uiState.update {
-                            it.copy(
-                                state = ContentState.TrackList(musicTrackItems = uiItems)
-                            )
-                        }
-                    } else {
-                        _uiState.update {
-                            it.copy(state = ContentState.Empty)
+            }
+                .collectLatest { uiItems ->
+                    withContext(appDispatchers.mainDispatcher) {
+                        if (uiItems.isNotEmpty()) {
+                            delay(1000)
+                            //Add delay when implementation is finished to improve UI
+                            //delay(3000)
+                            _uiState.update {
+                                it.copy(
+                                    state = ContentState.TrackList(musicTrackItems = uiItems)
+                                )
+                            }
+                        } else {
+                            _uiState.update {
+                                it.copy(state = ContentState.Empty)
+                            }
                         }
                     }
                 }
-
-            }
         }
     }
 
@@ -69,8 +72,8 @@ class HomeViewModel(
         }
     }
 
-    fun shuffleTrackList(){}
-    fun playTrackList(){}
+    fun shuffleTrackList() {}
+    fun playTrackList() {}
 
     fun formatDuration(duration: Long): String {
         val minutes = (duration / 1000) / 60

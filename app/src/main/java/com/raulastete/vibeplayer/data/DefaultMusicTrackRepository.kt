@@ -35,4 +35,8 @@ class DefaultMusicTrackRepository(
     override fun observeMusicTracks(): Flow<List<MusicTrack>> {
         return musicTrackDao.getAll().map { entities -> entities.map { it.toDomain() } }
     }
+
+    override fun search(searchQuery: String): Flow<List<MusicTrack>> {
+        return musicTrackDao.search(searchQuery).map { entities -> entities.map { it.toDomain() } }
+    }
 }

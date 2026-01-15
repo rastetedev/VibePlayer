@@ -22,6 +22,8 @@
     <string name="permission_rationale_description_dialog">VibePlayer needs access to your music files to function properly. Without this permission, the app cannot build your music library or play\nsongs.</string>
     <string name="shuffle_track_list_button">Shuffle</string>
     <string name="play_track_list_button">Play</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_results_search">No results found</string>
     <plurals name="track_count">
         <item quantity="one"> %d song</item>
         <item quantity="other"> %d songs</item>

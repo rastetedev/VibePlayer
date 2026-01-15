@@ -58,7 +58,14 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable<Destination.Search> {
-                        SearchScreen()
+                        SearchScreen(
+                            onNavigateBack = {
+                                navController.navigateUp()
+                            },
+                            navigateToPlayer = { musicTrackId ->
+                                navController.navigate(Destination.Player(musicTrackId))
+                            }
+                        )
                     }
 
                     composable<Destination.Player> {
