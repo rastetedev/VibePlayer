@@ -15,10 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.raulastete.vibeplayer.R
 import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
 import com.raulastete.vibeplayer.features.player.components.PlayerControl
 import com.raulastete.vibeplayer.ui.components.ArtWorkImage
@@ -49,6 +52,7 @@ private fun PlayerScreenContent(
     Scaffold(
         topBar = {
             InternalTopBar(
+                navigationIcon = ImageVector.vectorResource(R.drawable.minimize_track_icon),
                 onBackActionClick = onBackActionClick
             )
         }
@@ -76,10 +80,14 @@ private fun PlayerScreenContent(
             PlayerControl(
                 modifier = Modifier.fillMaxWidth(),
                 isPlaying = uiState.isPlaying,
+                isInShuffleMode = uiState.isInShuffleMode,
+                repeatingMode = uiState.repeatingMode,
                 onPlayButtonClick = {},
                 onPauseButtonClick = {},
                 onPreviousButtonClick = {},
-                onNextButtonClick = {}
+                onNextButtonClick = {},
+                onShuffleButtonClick = {},
+                onRepeatButtonClick = {}
             )
         }
     }
