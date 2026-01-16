@@ -58,13 +58,14 @@ private fun HomeScreenContent(
         Box(
             Modifier
                 .fillMaxSize()
-                .padding(it)
-                .padding(horizontal = 16.dp),
+                .padding(it),
             contentAlignment = Alignment.Center
         ) {
             when (uiState.state) {
                 ContentState.Empty -> EmptyView(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(horizontal = 16.dp),
                     loadTracks = onLoadTracks
                 )
 

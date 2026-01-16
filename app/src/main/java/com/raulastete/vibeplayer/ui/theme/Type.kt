@@ -61,3 +61,11 @@ val Typography.bodyMediumMedium
         fontSize = 14.sp,
         lineHeight = 18.sp
     )
+
+val Typography.bodySmallRegular
+    get() = TextStyle(
+        fontFamily = HostGroteskFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 16.sp
+    )

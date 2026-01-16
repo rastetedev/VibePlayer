@@ -1,6 +1,7 @@
 package com.raulastete.vibeplayer.features.home.songs
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -37,7 +38,7 @@ fun SongsTabScreen(
     onClickTrackItem: (MusicTrackItemUi) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    LazyColumn(modifier = modifier) {
+    LazyColumn(modifier = modifier, contentPadding = PaddingValues(horizontal = 16.dp)) {
         item {
             HeaderSection(
                 modifier = Modifier.fillMaxWidth(),

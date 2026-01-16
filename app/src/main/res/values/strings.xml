@@ -37,5 +37,7 @@
         My Playlists (%d)
     </string>
     <string name="create_playlist_button">Create playlist</string>
+    <string name="create_playlist_title">Create New Playlist</string>
+    <string name="create_button">Create</string>
 
 </resources>

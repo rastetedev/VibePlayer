@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.raulastete.vibeplayer.features.home.songs.PlayListTabScreen
+import com.raulastete.vibeplayer.features.home.playlists.PlayListTabScreen
 import com.raulastete.vibeplayer.features.home.songs.SongsTabScreen
 import com.raulastete.vibeplayer.ui.components.MusicTrackItemUi
 import com.raulastete.vibeplayer.ui.components.TrackItem

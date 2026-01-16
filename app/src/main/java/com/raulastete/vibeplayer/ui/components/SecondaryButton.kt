@@ -37,9 +37,9 @@ import com.raulastete.vibeplayer.ui.theme.bodyLargeMedium
 @Composable
 fun SecondaryButton(
     text: String,
-    icon: ImageVector,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    icon: ImageVector? = null,
     enabled: Boolean = true
 ) {
     val interactionSource = remember { MutableInteractionSource() }
@@ -65,8 +65,10 @@ fun SecondaryButton(
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(16.dp))
-            Spacer(Modifier.width(8.dp))
+            icon?.let {
+                Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(16.dp))
+                Spacer(Modifier.width(8.dp))
+            }
             Text(text = text, style = MaterialTheme.typography.bodyLargeMedium)
         }
     }
