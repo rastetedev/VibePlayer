@@ -1,4 +1,4 @@
-package com.raulastete.vibeplayer.features.home.components
+package com.raulastete.vibeplayer.ui.components
 
 import android.net.Uri
 import androidx.compose.foundation.clickable
@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.raulastete.vibeplayer.ui.components.ArtWorkImage
 import com.raulastete.vibeplayer.ui.theme.TextSecondary
 import com.raulastete.vibeplayer.ui.theme.bodyMediumRegular
 

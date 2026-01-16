@@ -43,8 +43,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.raulastete.vibeplayer.R
-import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
-import com.raulastete.vibeplayer.features.home.components.TrackItem
+import com.raulastete.vibeplayer.ui.components.MusicTrackItemUi
+import com.raulastete.vibeplayer.ui.components.TrackItem
 import com.raulastete.vibeplayer.ui.theme.ButtonHover
 import com.raulastete.vibeplayer.ui.theme.ButtonPrimary
 import com.raulastete.vibeplayer.ui.theme.Outline
@@ -232,4 +232,3 @@ private fun SearchInput(
         shape = RoundedCornerShape(100)
     )
 }
-

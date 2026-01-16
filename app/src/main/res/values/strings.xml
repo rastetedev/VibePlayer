@@ -24,9 +24,18 @@
     <string name="play_track_list_button">Play</string>
     <string name="cancel">Cancel</string>
     <string name="no_results_search">No results found</string>
+    <string name="favourites_playlist_name">Favourites</string>
     <plurals name="track_count">
         <item quantity="one"> %d song</item>
         <item quantity="other"> %d songs</item>
     </plurals>
+    <plurals name="playlist_count">
+        <item quantity="one"> %d Playlist</item>
+        <item quantity="other"> %d Playlists</item>
+    </plurals>
+    <string name="my_playlist_count">
+        My Playlists (%d)
+    </string>
+    <string name="create_playlist_button">Create playlist</string>
 
 </resources>

@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.raulastete.vibeplayer.R
-import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
+import com.raulastete.vibeplayer.ui.components.MusicTrackItemUi
 import com.raulastete.vibeplayer.features.player.components.PlayerControl
 import com.raulastete.vibeplayer.ui.components.ArtWorkImage
 import com.raulastete.vibeplayer.ui.components.InternalTopBar

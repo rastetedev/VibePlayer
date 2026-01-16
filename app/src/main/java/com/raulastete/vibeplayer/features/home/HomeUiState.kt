@@ -1,6 +1,6 @@
 package com.raulastete.vibeplayer.features.home
 
-import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
+import com.raulastete.vibeplayer.ui.components.MusicTrackItemUi
 
  data class HomeUiState(
     val state: ContentState = ContentState.Empty

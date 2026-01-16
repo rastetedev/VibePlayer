@@ -82,12 +82,12 @@ fun SecondaryButtonStatesPreview() {
         ) {
             SecondaryButton(
                 text = "Enabled",
-                icon = ImageVector.vectorResource(R.drawable.shuffle_icon),
+                icon = ImageVector.vectorResource(R.drawable.scan_icon),
                 onClick = { })
 
             SecondaryButton(
                 text = "Enabled",
-                icon = ImageVector.vectorResource(R.drawable.shuffle_icon),
+                icon = ImageVector.vectorResource(R.drawable.scan_icon),
                 enabled = false,
                 onClick = { })
         }

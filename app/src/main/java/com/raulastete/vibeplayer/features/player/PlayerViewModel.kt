@@ -3,7 +3,7 @@ package com.raulastete.vibeplayer.features.player
 import android.net.Uri
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
+import com.raulastete.vibeplayer.ui.components.MusicTrackItemUi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

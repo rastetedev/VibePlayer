@@ -11,16 +11,13 @@ import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import com.raulastete.vibeplayer.R
-import com.raulastete.vibeplayer.ui.theme.ButtonHover
+import com.raulastete.vibeplayer.ui.components.SecondaryIconButton
 import com.raulastete.vibeplayer.ui.theme.SurfaceBG
-import com.raulastete.vibeplayer.ui.theme.TextDisabled
 import com.raulastete.vibeplayer.ui.theme.TextPrimary
-import com.raulastete.vibeplayer.ui.theme.TextSecondary
 
 enum class MusicTrackRepeatingMode {
     OFF, REPEAT_ONE, REPEAT_ALL
@@ -44,13 +41,15 @@ fun PlayerControl(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
-        SecondaryButton(
+        SecondaryIconButton(
+            modifier = Modifier.size(44.dp),
             icon = ImageVector.vectorResource(R.drawable.shuffle_icon),
             isOn = isInShuffleMode,
             onClick = onShuffleButtonClick
         )
         Spacer(Modifier.weight(1f))
-        SecondaryButton(
+        SecondaryIconButton(
+            modifier = Modifier.size(44.dp),
             icon = ImageVector.vectorResource(R.drawable.previous_skip_filled_icon),
             onClick = onPreviousButtonClick
         )
@@ -61,12 +60,14 @@ fun PlayerControl(
             onClick = if (isPlaying) onPauseButtonClick else onPlayButtonClick
         )
         Spacer(Modifier.width(16.dp))
-        SecondaryButton(
+        SecondaryIconButton(
+            modifier = Modifier.size(44.dp),
             icon = ImageVector.vectorResource(R.drawable.next_skip_filled_icon),
             onClick = onNextButtonClick
         )
         Spacer(Modifier.weight(1f))
-        SecondaryButton(
+        SecondaryIconButton(
+            modifier = Modifier.size(44.dp),
             icon = when (repeatingMode) {
                 MusicTrackRepeatingMode.OFF -> ImageVector.vectorResource(R.drawable.repeat_off_icon)
                 MusicTrackRepeatingMode.REPEAT_ONE -> ImageVector.vectorResource(R.drawable.repeat_one_icon)
@@ -78,27 +79,6 @@ fun PlayerControl(
     }
 }
 
-@Composable
-private fun SecondaryButton(
-    icon: ImageVector,
-    onClick: () -> Unit,
-    isOn: Boolean = true
-) {
-    IconButton(
-        onClick = onClick,
-        modifier = Modifier.size(44.dp),
-        colors = IconButtonDefaults.filledIconButtonColors(
-            containerColor = if (isOn) ButtonHover else Color.Transparent,
-            contentColor = if (isOn) TextSecondary else TextDisabled
-        )
-    ) {
-        Icon(
-            modifier = Modifier.size(16.dp),
-            imageVector = icon,
-            contentDescription = null
-        )
-    }
-}
 
 @Composable
 private fun MainButton(

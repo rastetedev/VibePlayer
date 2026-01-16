@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raulastete.vibeplayer.core.AppDispatchers
 import com.raulastete.vibeplayer.domain.MusicTrackRepository
-import com.raulastete.vibeplayer.features.home.components.MusicTrackItemUi
+import com.raulastete.vibeplayer.ui.components.MusicTrackItemUi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
