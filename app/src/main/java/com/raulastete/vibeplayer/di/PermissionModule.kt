@@ -1,6 +1,6 @@
 package com.raulastete.vibeplayer.di
 
-import com.raulastete.vibeplayer.features.permission.PermissionViewmodel
+import com.raulastete.vibeplayer.presentation.features.permission.PermissionViewmodel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
